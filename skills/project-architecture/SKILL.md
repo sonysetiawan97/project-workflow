@@ -24,7 +24,7 @@ In this order; each builds on the ones before it.
 | `architecture/domain-model.md` | `templates/architecture/domain-model.md` | entities, aggregates, relations, state machines |
 | `architecture/data-model.md` | `templates/architecture/data-model.md` | ERD and tables |
 
-Follow each template exactly: same headings, same fields, same order, nothing added. Repeated blocks (`### {{nama_tabel}}`, table rows) repeat as often as needed. `Tanggal` is the date of the last write. A section with no answer holds "Belum diputuskan."
+Follow each template exactly: same headings, same fields, same order, nothing added. Repeated blocks (`### {{nama_tabel}}`, table rows) repeat as often as needed. `Tanggal` is the date the file was last written or confirmed. A section with no answer holds "Belum diputuskan."
 
 The `Container` table in `overview.md` names each app's technology, so settle the technology per app while writing `overview.md`; `stack.md` then adds versions and the remaining layers.
 
@@ -47,7 +47,7 @@ Done when each of the four files is marked absent or present, the upstream chang
 
 For each file, in order:
 
-1. Present: propose its pending ADR changes first, if any. Then ask the tech lead whether it has been reviewed and is correct. Yes means the file is done; otherwise take the corrections and go to step 4.
+1. Present: propose its pending ADR changes first, if any. Then ask the tech lead whether it has been reviewed and is correct. Yes means the file is done and its `Tanggal` becomes today; otherwise take the corrections and go to step 4.
 2. Absent: derive every section from the sources. Ask the tech lead only what cannot be derived, one question at a time, recommended answer first, with the reason.
 3. Write the file, then ask the tech lead to review it and say whether it is correct.
 4. Apply corrections and ask again, until the tech lead confirms.
