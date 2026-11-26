@@ -45,6 +45,6 @@ Done when every section holds a recap answer or a placeholder sentence, and no `
 
 ### 3. Approve
 
-Show the PM the written PRD and ask for approval. Apply corrections the PM gives; a correction that changes a product decision belongs in an ADR, so write or supersede it as `docs/adr/README.md` describes. Repeat until the PM approves, then set `Status` to `approved`.
+Give the PM the path `docs/prd.md` and a one-line summary per section, then ask whether the PM has read the file and approves it. Apply corrections the PM gives; a correction that changes a product decision belongs in an ADR, so write or supersede it as `docs/adr/README.md` describes. Repeat until the PM approves, then set `Status` to `approved`.
 
 Done when the PM has approved and `Status` is `approved`, or the PM ends the session with the PRD left as `draft`. Name the next step: `project-fsd`, which reads `docs/prd.md` and can run in a new conversation.

@@ -60,6 +60,6 @@ Done when every subsection of every queued feature holds a confirmed answer or a
 
 ### 4. Approve
 
-Settle `Notifikasi` and `Laporan dan Export` across the whole document. Then show the PM/BA the FSD and ask for approval. Apply corrections; a correction to an approved FSD adds a `Riwayat Perubahan` line and returns `Status` to `draft`. Set `Status` to `approved` once the PM/BA approves.
+Settle `Notifikasi` and `Laporan dan Export` across the whole document. Then give the PM/BA the path `docs/fsd.md` and a one-line summary per feature, and ask whether they have read the file and approve it. Apply corrections; a correction to an approved FSD adds a `Riwayat Perubahan` line and returns `Status` to `draft`. Set `Status` to `approved` once the PM/BA approves.
 
 Done when `Status` is `approved`, or the PM/BA ends the session with it left as `draft`. Name the next step: `project-architecture`, run by the tech lead, who also answers the tech-lead entries in `Pertanyaan Terbuka`.
