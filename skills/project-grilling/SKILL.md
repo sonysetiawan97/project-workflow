@@ -44,7 +44,7 @@ Done when every file above is read and the mode (first run or re-run) is known.
 - Push vague answers to concrete ones: a goal without a number, a feature without a priority, an actor without a role.
 - A technical question (database, framework, hosting, API shape, integration mechanics) goes to the tech lead, not the PM. Record it as an open question and move on.
 - Write as decisions settle, not at the end:
-  - **Glossary**: when a domain term is fixed, add or update its entry in `glossary.md`, following the template in that file's header comment. Ask the PM when two words name one concept.
+  - **Glossary**: when a domain term is fixed, add or update its entry in `glossary.md`, following the template in that file's header comment. The definition says what the term is, not what it does. Ask the PM when two words name one concept.
   - **ADR**: when a decision meets all three conditions in `docs/adr/README.md` and the PM confirms it, write it there with `Cakupan: product`, `Pemutus: PM`, `Sumber: sesi grilling YYYY-MM-DD`. Superseding an existing ADR follows the rules in that file.
 
 Done when every topic is settled or holds an open question the PM could not answer, and the PM confirms nothing is missing.

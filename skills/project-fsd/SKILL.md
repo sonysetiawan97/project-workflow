@@ -51,7 +51,7 @@ For each feature in the queue, settle every subsection of its `### F-NN` section
 - Every business rule gets at least one `Kriteria Penerimaan` line in `**Dengan** ... **Ketika** ... **Maka** ...` form that names its `BR-NNN`.
 - A notification or report the feature needs goes into `Notifikasi` or `Laporan dan Export`; a new actor action goes into `Aktor dan Hak Akses`.
 - A technical question (database, framework, API shape, integration mechanics) goes to the tech lead: add it to `Pertanyaan Terbuka` with "tech lead" as who must answer, and move on.
-- A domain term that settles goes into `glossary.md`, following the template in its header comment. A product decision that meets the three conditions in `docs/adr/README.md` and is confirmed goes into an ADR with `Cakupan: product`, `Pemutus: PM`, `Sumber: sesi FSD YYYY-MM-DD`.
+- A domain term that settles goes into `glossary.md`, following the template in its header comment. The definition says what the term is, not what it does. A product decision that meets the three conditions in `docs/adr/README.md` and is confirmed goes into an ADR with `Cakupan: product`, `Pemutus: PM`, `Sumber: sesi FSD YYYY-MM-DD`.
 - The answer changes the PRD (a missing feature or actor, a changed goal or priority): stop. Keep what is written, then tell the PM to run `project-grilling` and `project-prd` for that change, and `project-fsd` again afterwards to resume.
 
 Write the feature's section the moment it settles, update `Tanggal`, and move to the next feature in the queue.
