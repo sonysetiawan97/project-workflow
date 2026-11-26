@@ -34,9 +34,10 @@ Business rule IDs are global: the next `BR-NNN` is the highest in the file plus 
 - Read `glossary.md`, every ADR in `docs/adr/` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR), `docs/prd.md`, and `docs/fsd.md` if it exists.
 - Compare the PRD's `Fitur` table with the FSD's `### F-NN` sections. The features with no section are the **queue**: must first, then should, then could, PRD order within each priority. An FSD section whose feature left the PRD is removed, with a `Riwayat Perubahan` line.
 - List the PRD's `Pertanyaan Terbuka` entries addressed to the PM that the FSD neither answers nor lists yet. Each goes into the FSD's `Pertanyaan Terbuka` (after step 2 on a new file), tagged with the `F-NN` that should answer it.
+- `architecture/` exists: read it. A `Pertanyaan Terbuka` entry addressed to the tech lead that is answered in `architecture/` or an ADR leaves the FSD, with a `Riwayat Perubahan` line naming where it is answered.
 - List every ADR whose `Konsekuensi` has a `FSD perlu diubah:` line and whose number no `Riwayat Perubahan` line names yet. Each is a **pending ADR change**; its feature joins the queue, and a feature that already has a section is reopened only for the subsections that change.
 
-Done when the queue, the carried-over questions and the pending ADR changes are known, or the queue is empty and the PM/BA has named what to change.
+Done when the queue, the carried-over questions, the answered tech-lead questions and the pending ADR changes are known, or the queue is empty and the PM/BA has named what to change.
 
 ### 2. Frame
 
