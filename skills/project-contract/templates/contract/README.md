@@ -9,8 +9,8 @@ Sumber kebenaran antarmuka antar-app. Kode di `apps/` mengikuti file di sini.
 ## Aturan
 
 - Ubah contract dulu, baru kode.
-- Breaking change: buat ADR dengan Cakupan `contract`, lalu naikkan versi major di `info.version`.
-- Perubahan yang tidak breaking menaikkan versi minor.
+- Selama `info.version` masih `0.x`, setiap perubahan menaikkan versi minor tanpa ADR, karena belum ada konsumen yang dirilis.
+- Versi `1.0.0` ditetapkan tech lead saat app konsumen pertama dirilis. Sejak itu, perubahan yang tidak breaking menaikkan versi minor; breaking change wajib ADR dengan Cakupan `contract` dan menaikkan versi major.
 - Nama schema dan field mengikuti istilah di `glossary.md`.
 
 ## Daftar Service

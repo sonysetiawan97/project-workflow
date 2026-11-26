@@ -32,7 +32,7 @@ The agent proposes, the tech lead decides. Each service's OpenAPI file is derive
 | Operation tags | the `F-NN` of every FSD feature it serves | `tags: [F-01]` |
 | Operation `description` | ends with the BR IDs the operation enforces | `Menegakkan BR-003, BR-007.` |
 
-Versioning follows `contract/README.md`: a new file starts at `0.1.0`; a non-breaking change bumps the minor; a breaking change bumps the major and needs an ADR with `Cakupan: contract`, `Pemutus: tech lead`, `Sumber: sesi contract YYYY-MM-DD`.
+Versioning follows `contract/README.md`: a new file starts at `0.1.0`. While the version is `0.x`, every change bumps the minor and needs no ADR, because no consumer has been released against it. The tech lead sets `1.0.0` when the first consumer app is released; from then on a non-breaking change bumps the minor, and a breaking change bumps the major and needs an ADR with `Cakupan: contract`, `Pemutus: tech lead`, `Sumber: sesi contract YYYY-MM-DD`.
 
 ## Process
 

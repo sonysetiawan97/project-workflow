@@ -1,6 +1,6 @@
 # Contract memakai OpenAPI
 
-- **Tanggal:** 2026-11-26
+- **Tanggal:** 2026-11-27
 - **Sumber:** percakapan 2026-11-26
 - **Status:** accepted
 - **Cakupan:** contract
@@ -8,7 +8,7 @@
 
 ## Keputusan
 
-Contract ditulis sebagai OpenAPI 3.1, satu file per service di `contract/http/<service>.openapi.yaml`. Contract adalah sumber kebenaran antarmuka: kode di `apps/` mengikutinya, dan contract diubah lebih dulu. Breaking change wajib ADR dan menaikkan versi.
+Contract ditulis sebagai OpenAPI 3.1, satu file per service di `contract/http/<service>.openapi.yaml`. Contract adalah sumber kebenaran antarmuka: kode di `apps/` mengikutinya, dan contract diubah lebih dulu. Breaking change wajib ADR dan menaikkan versi major, mulai versi `1.0.0`, yang ditetapkan saat app konsumen pertama dirilis; selama `0.x`, setiap perubahan cukup menaikkan versi minor.
 
 ## Opsi yang Dipertimbangkan
 
