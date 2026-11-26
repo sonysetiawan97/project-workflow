@@ -26,6 +26,8 @@ In this order; each builds on the ones before it.
 
 Follow each template exactly: same headings, same fields, same order, nothing added. Repeated blocks (`### {{nama_tabel}}`, table rows) repeat as often as needed. `Tanggal` is the date of the last write. A section with no answer holds "Belum diputuskan."
 
+The `Container` table in `overview.md` names each app's technology, so settle the technology per app while writing `overview.md`; `stack.md` then adds versions and the remaining layers.
+
 Endpoint paths, payloads and schemas belong to `project-contract`. `overview.md` names which `contract/http/<service>.openapi.yaml` covers each integration, not its content.
 
 ## Process
