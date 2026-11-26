@@ -39,7 +39,7 @@ Done when the recap is located and the mode (new or update) is known.
 Map the recap onto the template: one recap topic per section, features into the `Fitur` table with the recap's `F-NN` IDs, the recap's `Pertanyaan Terbuka` list into that section with who must answer each.
 
 - New: write `docs/prd.md` from the template. `Riwayat Perubahan` gets one line: today and "Versi pertama dari sesi grilling."
-- Update: change only what the recap changed. Existing feature IDs stay; a removed feature leaves its row out and the change log says so. Append one `Riwayat Perubahan` line: today, what changed, why. `Status` returns to `draft`.
+- Update: change only what the recap changed. Existing feature IDs stay; a removed feature leaves its row out and the change log says so. An open question the recap lists as answered leaves `Pertanyaan Terbuka`. Append one `Riwayat Perubahan` line: today, what changed, why, and where each removed question was answered. `Status` returns to `draft`.
 
 Done when every section holds a recap answer or a placeholder sentence, and no `{{` remains in the file.
 

@@ -33,7 +33,7 @@ The done-bar. Each topic mirrors a section of the PRD template owned by `project
 
 `glossary.md` and `docs/adr/README.md` exist in the project. If either is absent, stop and tell the PM to run `project-setup` first.
 
-Read `AGENTS.md`, `glossary.md`, `docs/adr/README.md`, every ADR in `docs/adr/` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR), and `docs/prd.md` if it exists. An existing `docs/prd.md` means this is a re-run: grill only what changes, keep existing feature IDs, and treat its content as the current answer for each topic.
+Read `AGENTS.md`, `glossary.md`, `docs/adr/README.md`, every ADR in `docs/adr/` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR), and `docs/prd.md` if it exists. An existing `docs/prd.md` means this is a re-run: grill only what changes, keep existing feature IDs, and treat its content as the current answer for each topic. On a re-run also read `docs/fsd.md` and `architecture/` if they exist: a PRD `Pertanyaan Terbuka` entry answered there, or in an ADR, is answered.
 
 Done when every file above is read and the mode (first run or re-run) is known.
 
@@ -51,7 +51,7 @@ Done when every topic is settled or holds an open question the PM could not answ
 
 ### 3. Recap
 
-Post the recap in the conversation, in Indonesian: one heading per topic with its settled answer, features numbered `F-01`, `F-02`, ... (continuing the existing IDs on a re-run), then a `Pertanyaan Terbuka` list with each question and who must answer it (PM or tech lead). This recap is what `project-prd` writes from; it must stand on its own if earlier turns are compacted.
+Post the recap in the conversation, in Indonesian: one heading per topic with its settled answer, features numbered `F-01`, `F-02`, ... (continuing the existing IDs on a re-run), then a `Pertanyaan Terbuka` list with each question and who must answer it (PM or tech lead). On a re-run, list the PRD entries already answered separately, each with where it is answered (for example `docs/fsd.md` BR-010 or `ADR-0003`). This recap is what `project-prd` writes from; it must stand on its own if earlier turns are compacted.
 
 List the glossary entries and ADRs written this session. Name the next step: run `project-prd` in this conversation.
 
