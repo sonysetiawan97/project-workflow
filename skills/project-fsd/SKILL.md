@@ -15,7 +15,7 @@ Relentless interview with the PM/BA, one PRD feature at a time, until every feat
 
 ## Template
 
-`templates/docs/fsd.md` is the FSD's template. Follow it exactly: same headings, same fields, same order, nothing added. `### F-NN` sections appear in ID order, whatever order they were interviewed in. A section with no answer holds "Belum diputuskan."; `Notifikasi`, `Laporan dan Export`, `Pertanyaan Terbuka` and `Catatan UI` hold "Tidak ada." when the PM/BA confirms there is nothing.
+`templates/docs/fsd.md` is the FSD's template. Follow it exactly: same headings, same fields, same order, nothing added. `### F-NN` sections appear in ID order, whatever order they were interviewed in. A section with no answer holds "Belum diputuskan."; `Notifikasi`, `Laporan dan Export`, `Pertanyaan Terbuka`, `Catatan UI`, `State dan Transisi` and `Field dan Validasi` hold "Tidak ada." when the PM/BA confirms there is nothing; in `Field dan Validasi` it is the table's only row, `| Tidak ada. | - | - | - | - |`.
 
 | Field | Value |
 |---|---|
