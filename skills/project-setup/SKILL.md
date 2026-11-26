@@ -44,10 +44,10 @@ Done when every skeleton path except the division `.gitkeep` files has a state, 
 
 ### 2. Ask
 
-In Indonesian, one question at a time, recommended answer first:
+In Indonesian, one question at a time:
 
 1. Project name. Recommend the folder name.
-2. Project description, 1-2 sentences.
+2. Project description, 1-2 sentences. An open question with no recommended answer: only the user knows the project.
 3. Divisions. Recommend the folders already under `docs/tracker/` if there are any, otherwise the default `dev`, `qc`, `ui-ux`; the user may add more. Slugs are lowercase kebab-case.
 
 ### 3. Confirm
