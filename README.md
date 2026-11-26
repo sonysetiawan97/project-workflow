@@ -44,17 +44,48 @@ skills/              skill khusus project
 - Placeholder `{{HURUF_BESAR}}` diisi `project-setup`. Placeholder `{{teks biasa}}` diisi skill pemilik artefak.
 - Keputusan desain repo ini ada di `docs/adr/`. Istilah ada di `glossary.md`.
 
+## Prasyarat
+
+- macOS atau Linux, karena project dan install memakai symlink.
+- Agent yang membaca skill dari `~/.claude/skills/` (Claude Code) atau `~/.agents/skills/`.
+- Parser YAML, misalnya Python 3 dengan PyYAML, untuk pengecekan di `project-contract`.
+
 ## Install
 
 Dari root repo ini:
 
 ```sh
+mkdir -p ~/.claude/skills ~/.agents/skills
 for s in skills/*/; do
   [ -f "$s/SKILL.md" ] || continue
   ln -s "$PWD/${s%/}" ~/.claude/skills/
   ln -s "$PWD/${s%/}" ~/.agents/skills/
 done
 ```
+
+Karena berupa symlink, `git pull` di repo ini langsung memperbarui skill yang ter-install.
+
+## Uninstall
+
+Dari root repo ini. Hanya symlink yang dihapus:
+
+```sh
+for s in skills/*/; do
+  n=$(basename "$s")
+  for d in ~/.claude/skills ~/.agents/skills; do
+    [ -L "$d/$n" ] && rm "$d/$n"
+  done
+done
+```
+
+## Cara Pakai
+
+Semua skill dijalankan manual dengan mengetik namanya, misalnya `/project-setup`. Setiap skill mengecek Artefak hulunya dan berhenti jika belum ada.
+
+1. **Siapa pun**, di folder project baru: `/project-setup`.
+2. **PM**: `/project-grilling`, lalu `/project-prd` di percakapan yang sama. PRD disusun dari rekap grilling, jadi jangan membuka percakapan baru di antara keduanya.
+3. **PM/BA**: `/project-fsd`, setelah PRD berstatus `approved`. Boleh dilanjutkan di percakapan baru; skill melanjutkan dari fitur yang belum ditulis.
+4. **Tech lead**: `/project-architecture`, setelah FSD berstatus `approved`, lalu `/project-contract`. Setiap file diusulkan agent dan dikonfirmasi tech lead.
 
 ## Lisensi
 
