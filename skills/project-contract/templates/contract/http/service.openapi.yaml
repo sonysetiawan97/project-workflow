@@ -1,0 +1,9 @@
+openapi: 3.1.0
+info:
+  title: "{{nama service}}"
+  version: 0.1.0
+  description: "{{tanggung jawab service, bahasa Indonesia}}"
+servers: []
+paths: {}
+components:
+  schemas: {}
