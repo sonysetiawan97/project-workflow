@@ -24,6 +24,7 @@
 - Pakai istilah dari `glossary.md`.
 - Ubah `contract/` dulu, baru kode di `apps/`.
 - Keputusan yang sulit dibalik dicatat sebagai ADR.
+- Hapus `.gitkeep` dari folder yang sudah berisi file lain.
 
 ## Workflow
 
