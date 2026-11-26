@@ -56,7 +56,7 @@ While proposing:
 - A domain term that settles goes into `glossary.md`, following the template in its header comment. The definition says what the term is, not what it does.
 - The architecture needs a change to the FSD or PRD (a business rule that cannot be built, a missing feature): stop. Keep the confirmed files, tell the user to run `project-fsd` (or `project-grilling` and `project-prd` for a PRD change), then `project-architecture` again to resume.
 
-Done per file when the tech lead confirms it is reviewed and correct and no `{{` remains in it. Done for the step when all four are confirmed and they agree with each other and the sources: every entity uses its `glossary.md` term, every state machine cites `BR-NNN` IDs that exist in `docs/fsd.md`, every table in `data-model.md` belongs to an entity in `domain-model.md`, and every app in `overview.md` has a row in `stack.md`.
+Done per file when the tech lead confirms it is reviewed and correct and no `{{` remains in it. Done for the step when all four are confirmed and they agree with each other and the sources: every entity uses its `glossary.md` term, every state machine cites `BR-NNN` IDs that exist in `docs/fsd.md`, every table in `data-model.md` belongs to an entity or aggregate in `domain-model.md`, or its `Keterangan` marks it as a technical table and names its owner (for example a session table), and every app in `overview.md` has a row in `stack.md`.
 
 ### 3. Close
 
