@@ -39,9 +39,10 @@ Done when the queue and the carried-over questions are known, or the queue is em
 
 ### 2. Frame
 
-New file only: write `docs/fsd.md` from the template with the header, `Ringkasan` from the PRD, `Daftar Fitur` copied from the PRD's `Fitur` table, `Aktor dan Hak Akses` with one row per PRD actor, and every other section as "Belum diputuskan.". `Riwayat Perubahan` gets one line: today and "Versi pertama."
+- New file: write `docs/fsd.md` from the template with the header, `Ringkasan` from the PRD, `Daftar Fitur` copied from the PRD's `Fitur` table, `Aktor dan Hak Akses` with one row per PRD actor, and every other section as "Belum diputuskan.". `Riwayat Perubahan` gets one line: today and "Versi pertama."
+- Existing file: bring `Daftar Fitur` in line with the PRD's `Fitur` table (ID, name, priority), and give each new PRD actor a row in `Aktor dan Hak Akses` holding "Belum diputuskan.". Any change adds one `Riwayat Perubahan` line.
 
-Done when the file exists and its header and `Daftar Fitur` match the PRD.
+Done when the file exists, its `Daftar Fitur` matches the PRD's `Fitur` table, and `Aktor dan Hak Akses` has a row for every PRD actor.
 
 ### 3. Grill each feature
 
