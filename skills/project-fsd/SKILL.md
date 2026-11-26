@@ -34,8 +34,9 @@ Business rule IDs are global: the next `BR-NNN` is the highest in the file plus 
 - Read `glossary.md`, every ADR in `docs/adr/` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR), `docs/prd.md`, and `docs/fsd.md` if it exists.
 - Compare the PRD's `Fitur` table with the FSD's `### F-NN` sections. The features with no section are the **queue**: must first, then should, then could, PRD order within each priority. An FSD section whose feature left the PRD is removed, with a `Riwayat Perubahan` line.
 - List the PRD's `Pertanyaan Terbuka` entries addressed to the PM that the FSD neither answers nor lists yet. Each goes into the FSD's `Pertanyaan Terbuka` (after step 2 on a new file), tagged with the `F-NN` that should answer it.
+- List every ADR whose `Konsekuensi` has a `FSD perlu diubah:` line and whose number no `Riwayat Perubahan` line names yet. Each is a **pending ADR change**; its feature joins the queue, and a feature that already has a section is reopened only for the subsections that change.
 
-Done when the queue and the carried-over questions are known, or the queue is empty and the PM/BA has named what to change.
+Done when the queue, the carried-over questions and the pending ADR changes are known, or the queue is empty and the PM/BA has named what to change.
 
 ### 2. Frame
 
@@ -48,7 +49,8 @@ Done when the file exists, its `Daftar Fitur` matches the PRD's `Fitur` table, a
 
 For each feature in the queue, settle every subsection of its `### F-NN` section in template order:
 
-- Start with the `Pertanyaan Terbuka` entries tagged with this feature. An answered entry leaves `Pertanyaan Terbuka` and lands in the subsection it settles, often as a `BR-NNN`.
+- Start with the `Pertanyaan Terbuka` entries and pending ADR changes for this feature. An answered entry leaves `Pertanyaan Terbuka` and lands in the subsection it settles, often as a `BR-NNN`. An applied ADR change adds a `Riwayat Perubahan` line naming the ADR.
+- A pending ADR change is a proposal: show the PM/BA the ADR's decision and ask whether to apply it. Rejected: write the PM/BA's decision into the FSD instead, and write a product ADR (`Cakupan: product`, `Pemutus: PM`, `Sumber: sesi FSD YYYY-MM-DD`) that supersedes the old one as `docs/adr/README.md` describes, with a `Konsekuensi` line `architecture/ perlu diubah: <file>, <file>: <what changes>` naming every `architecture/` file the change touches. The `Riwayat Perubahan` line names both ADRs.
 - One question at a time, recommended answer first, with the reason drawn from the PRD, the ADRs, or features already specified.
 - Push to concrete: a flow step that names the actor and the screen, a rule with numbers, a field with its type and error message, a state change with who may trigger it.
 - Every business rule gets at least one `Kriteria Penerimaan` line in `**Dengan** ... **Ketika** ... **Maka** ...` form that names its `BR-NNN`.
