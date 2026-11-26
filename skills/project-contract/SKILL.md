@@ -60,7 +60,7 @@ For each service, in `overview.md` order:
 
 The check: the file parses as YAML (`python3 -c 'import sys, yaml; yaml.safe_load(open(sys.argv[1]))' <file>`, or any other YAML parser), `openapi` is `3.1.0`, and no `{{` remains.
 
-The contract needs a change to `architecture/`, the FSD or the PRD (a missing entity, an unbuildable rule): stop. Keep the confirmed files and the current draft, and name the draft in the stop message. Tell the user which skill to run first, then `project-contract` again to resume. A domain term that settles goes into `glossary.md`, following the template in its header comment. The definition says what the term is, not what it does.
+The contract needs a change to `architecture/`, the FSD or the PRD (a missing entity, an unbuildable rule): stop. Keep the confirmed files and the current draft, and name the draft in the stop message. Tell the user which skills to run, in order: a change that also adds behaviour for an actor (a setting, a screen, a flow) goes to `project-fsd` first, then `project-architecture`; a purely technical gap goes to `project-architecture` alone. Then run `project-contract` again to resume. A domain term that settles goes into `glossary.md`, following the template in its header comment. The definition says what the term is, not what it does.
 
 Done per file when the check passes and the tech lead confirms it. Done for the step when every service is confirmed, every FSD feature that calls a service has at least one operation tagged with its `F-NN`, and every cited `BR-NNN` exists in `docs/fsd.md`.
 
