@@ -46,25 +46,26 @@ Versioning follows `contract/README.md`: a new file starts at `0.1.0`; a non-bre
 - `apps/` holds code: read its routes and request/response types. Existing routes are the default answer; changing one is a contract change under the versioning rules.
 - List the services: every app in `architecture/overview.md` that exposes an HTTP API. A frontend that only serves pages to the browser is a consumer, not a service.
 
-Done when every service is marked absent or present in `contract/http/`.
+Done when every service is marked absent, confirmed (its file has a row in `contract/README.md`), or draft (its file has no row yet: left by a run that stopped before the tech lead confirmed it).
 
 ### 2. Propose each service
 
 For each service, in `overview.md` order:
 
-1. Present: ask the tech lead whether it has been reviewed and is correct. Yes means the file is done; otherwise take the change, classify it as breaking or non-breaking, and go to step 4.
-2. Absent: derive the paths, operations and schemas from the FSD features this service serves: flows give operations, `Field dan Validasi` gives schemas and error responses, `State dan Transisi` gives status enums. Ask the tech lead only what cannot be derived, one question at a time, recommended answer first, with the reason.
-3. Write the file, check it, then ask the tech lead to review it and say whether it is correct.
-4. Apply corrections, bump `info.version` as the versioning rules require, check again, and ask again, until the tech lead confirms.
+1. Confirmed: ask the tech lead whether it has been reviewed and is correct. Yes means the file is done; otherwise take the change, classify it as breaking or non-breaking, and go to step 5.
+2. Draft: go to step 3 with the draft as the proposal.
+3. Absent: derive the paths, operations and schemas from the FSD features this service serves: flows give operations, `Field dan Validasi` gives schemas and error responses, `State dan Transisi` gives status enums. Ask the tech lead only what cannot be derived, one question at a time, recommended answer first, with the reason.
+4. Write the file, check it, then ask the tech lead to review it and say whether it is correct.
+5. Apply corrections, bump `info.version` as the versioning rules require, check again, and ask again, until the tech lead confirms. Then add or update the service's row in `contract/README.md` (writing the file from its template if absent); the row marks the file as confirmed.
 
 The check: the file parses as YAML (`python3 -c 'import sys, yaml; yaml.safe_load(open(sys.argv[1]))' <file>`, or any other YAML parser), `openapi` is `3.1.0`, and no `{{` remains.
 
-The contract needs a change to `architecture/`, the FSD or the PRD (a missing entity, an unbuildable rule): stop. Keep the confirmed files, tell the user which skill to run first, then `project-contract` again to resume. A domain term that settles goes into `glossary.md`, following the template in its header comment. The definition says what the term is, not what it does.
+The contract needs a change to `architecture/`, the FSD or the PRD (a missing entity, an unbuildable rule): stop. Keep the confirmed files and the current draft, and name the draft in the stop message. Tell the user which skill to run first, then `project-contract` again to resume. A domain term that settles goes into `glossary.md`, following the template in its header comment. The definition says what the term is, not what it does.
 
 Done per file when the check passes and the tech lead confirms it. Done for the step when every service is confirmed, every FSD feature that calls a service has at least one operation tagged with its `F-NN`, and every cited `BR-NNN` exists in `docs/fsd.md`.
 
 ### 3. Index
 
-Write or update `contract/README.md` from its template: one `Daftar Service` row per service with its file, `info.version`, and the apps that consume it (from `architecture/overview.md`). Ask the tech lead to confirm it.
+`contract/README.md` holds one `Daftar Service` row per confirmed service, written in step 2: its file, `info.version`, and the apps that consume it (from `architecture/overview.md`). Check the rows against the files, then ask the tech lead to confirm the index.
 
 Done when every file in `contract/http/` has a row and the tech lead confirms. Report the ADRs written this session. The foundation is complete; the next stage is per-feature tickets in `docs/tracker/`.
