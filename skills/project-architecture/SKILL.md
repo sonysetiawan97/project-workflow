@@ -53,6 +53,7 @@ For each file, in order:
 While proposing:
 
 - A decision that meets the three conditions in `docs/adr/README.md` and is confirmed by the tech lead goes into an ADR with `Cakupan: architecture`, `Pemutus: tech lead`, `Sumber: sesi arsitektur YYYY-MM-DD`. `stack.md` cites it in the `ADR` column.
+- Every version in `stack.md` is checked against its source (`npm view <package> version`, the official release page) at the time of writing; a version that cannot be checked is written as "perlu dicek".
 - A domain term that settles goes into `glossary.md`, following the template in its header comment. The definition says what the term is, not what it does.
 - The architecture needs a change to the FSD or PRD (a business rule that cannot be built, a missing feature): stop. Keep the confirmed files, tell the user to run `project-fsd` (or `project-grilling` and `project-prd` for a PRD change), then `project-architecture` again to resume.
 
