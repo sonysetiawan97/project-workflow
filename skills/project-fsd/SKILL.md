@@ -33,8 +33,9 @@ Business rule IDs are global: the next `BR-NNN` is the highest in the file plus 
 - `docs/prd.md` exists with `Status: approved`. If absent or `draft`, stop and tell the user to finish `project-prd`.
 - Read `glossary.md`, every ADR in `docs/adr/` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR), `docs/prd.md`, and `docs/fsd.md` if it exists.
 - Compare the PRD's `Fitur` table with the FSD's `### F-NN` sections. The features with no section are the **queue**: must first, then should, then could, PRD order within each priority. An FSD section whose feature left the PRD is removed, with a `Riwayat Perubahan` line.
+- List the PRD's `Pertanyaan Terbuka` entries addressed to the PM that the FSD neither answers nor lists yet. Each goes into the FSD's `Pertanyaan Terbuka` (after step 2 on a new file), tagged with the `F-NN` that should answer it.
 
-Done when the queue is known, or the queue is empty and the PM/BA has named what to change.
+Done when the queue and the carried-over questions are known, or the queue is empty and the PM/BA has named what to change.
 
 ### 2. Frame
 
@@ -46,6 +47,7 @@ Done when the file exists and its header and `Daftar Fitur` match the PRD.
 
 For each feature in the queue, settle every subsection of its `### F-NN` section in template order:
 
+- Start with the `Pertanyaan Terbuka` entries tagged with this feature. An answered entry leaves `Pertanyaan Terbuka` and lands in the subsection it settles, often as a `BR-NNN`.
 - One question at a time, recommended answer first, with the reason drawn from the PRD, the ADRs, or features already specified.
 - Push to concrete: a flow step that names the actor and the screen, a rule with numbers, a field with its type and error message, a state change with who may trigger it.
 - Every business rule gets at least one `Kriteria Penerimaan` line in `**Dengan** ... **Ketika** ... **Maka** ...` form that names its `BR-NNN`.
