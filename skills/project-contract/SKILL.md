@@ -44,7 +44,7 @@ Versioning follows `contract/README.md`: a new file starts at `0.1.0`; a non-bre
 - No ADR change is pending. An ADR whose `Konsekuensi` has a `FSD perlu diubah:` line that no `Riwayat Perubahan` line in `docs/fsd.md` names, or an `architecture/ perlu diubah:` line whose named files do not all cite the ADR: stop, and tell the user to run `project-fsd` or `project-architecture` first.
 - Read `glossary.md`, every ADR in `docs/adr/` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR), `docs/fsd.md`, every file in `architecture/`, and everything in `contract/`.
 - `apps/` holds code: read its routes and request/response types. Existing routes are the default answer; changing one is a contract change under the versioning rules.
-- List the services: every app in `architecture/overview.md` that serves HTTP to another app or to a client.
+- List the services: every app in `architecture/overview.md` that exposes an HTTP API. A frontend that only serves pages to the browser is a consumer, not a service.
 
 Done when every service is marked absent or present in `contract/http/`.
 
