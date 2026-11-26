@@ -38,9 +38,9 @@ The three shared templates (`glossary.md`, `docs/adr/README.md`, `docs/tracker/R
 
 ### 1. Explore
 
-The target is the current working directory unless the user names another. For every path in the skeleton, record one state: absent, present, or (for the symlinks) a real directory or a symlink to another target. Also note whether the target is a git repo; report it, change nothing.
+The target is the current working directory unless the user names another. For every path in the skeleton except the division `.gitkeep` files, record one state: absent, present, or (for the symlinks) a real directory or a symlink to another target. Divisions are chosen in step 2, so list the folders already under `docs/tracker/` instead. Also note whether the target is a git repo; report it, change nothing.
 
-Done when every skeleton path has a state.
+Done when every skeleton path except the division `.gitkeep` files has a state, and the existing `docs/tracker/` folders are listed.
 
 ### 2. Ask
 
@@ -48,11 +48,11 @@ In Indonesian, one question at a time, recommended answer first:
 
 1. Project name. Recommend the folder name.
 2. Project description, 1-2 sentences.
-3. Divisions. Recommend the default `dev`, `qc`, `ui-ux`; the user may add more. Slugs are lowercase kebab-case.
+3. Divisions. Recommend the folders already under `docs/tracker/` if there are any, otherwise the default `dev`, `qc`, `ui-ux`; the user may add more. Slugs are lowercase kebab-case.
 
 ### 3. Confirm
 
-Show the user three lists: paths to create, paths already present (kept as they are), and conflicts. Wait for an explicit yes.
+Record the state of each chosen division's `docs/tracker/<division>/.gitkeep`. Show the user three lists: paths to create, paths already present (kept as they are), and conflicts. Wait for an explicit yes.
 
 ### 4. Write
 
