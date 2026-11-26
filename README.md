@@ -38,7 +38,7 @@ skills/              skill khusus project
 
 - `SKILL.md` ditulis dalam bahasa Inggris. Template, dokumen yang dihasilkan, dan sesi grilling memakai bahasa Indonesia.
 - Nama file dan folder huruf kecil kebab-case, kecuali `AGENTS.md`, `CLAUDE.md`, `SKILL.md`, `README.md`, `LICENSE`.
-- Satu artefak, satu template, satu skill pemilik.
+- Satu artefak, satu template, satu skill pemilik. Pengecualian: glossary dan ADR ditulis oleh skill yang sedang berjalan.
 - Template milik satu skill ada di `skills/<skill>/templates/`, dengan path yang mencerminkan path di project.
 - Template bersama (ADR, glossary, tiket) ada di `skills/project-setup/templates/`. `project-setup` menyalinnya ke project, lalu semua skill membacanya dari project.
 - Placeholder `{{HURUF_BESAR}}` diisi `project-setup`. Placeholder `{{teks biasa}}` diisi skill pemilik artefak.
