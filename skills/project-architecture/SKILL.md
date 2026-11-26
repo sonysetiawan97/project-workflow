@@ -34,7 +34,7 @@ Endpoint paths, payloads and schemas belong to `project-contract`. `overview.md`
 
 - `glossary.md` exists. If absent, stop and tell the user to run `project-setup`.
 - `docs/fsd.md` exists with `Status: approved`. If absent or `draft`, stop and tell the user to finish `project-fsd`.
-- Read `glossary.md`, every ADR in `docs/adr/`, `docs/prd.md`, `docs/fsd.md`, and every file in `architecture/`.
+- Read `glossary.md`, every ADR in `docs/adr/` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR), `docs/prd.md`, `docs/fsd.md`, and every file in `architecture/`.
 - `apps/` holds code: read its manifests (`package.json`, `go.mod`, `pyproject.toml`, ...), folder structure, and any schema or migration files. Existing code is the default answer: proposals follow its stack and structure unless the tech lead decides to change them through an ADR.
 
 Done when each of the four files is marked absent or present, and the stack and structure of any existing code is known.

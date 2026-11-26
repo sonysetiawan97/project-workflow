@@ -33,7 +33,7 @@ The done-bar. Each topic mirrors a section of the PRD template owned by `project
 
 `glossary.md` and `docs/adr/README.md` exist in the project. If either is absent, stop and tell the PM to run `project-setup` first.
 
-Read `AGENTS.md`, `glossary.md`, `docs/adr/README.md`, every ADR in `docs/adr/`, and `docs/prd.md` if it exists. An existing `docs/prd.md` means this is a re-run: grill only what changes, keep existing feature IDs, and treat its content as the current answer for each topic.
+Read `AGENTS.md`, `glossary.md`, `docs/adr/README.md`, every ADR in `docs/adr/` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR), and `docs/prd.md` if it exists. An existing `docs/prd.md` means this is a re-run: grill only what changes, keep existing feature IDs, and treat its content as the current answer for each topic.
 
 Done when every file above is read and the mode (first run or re-run) is known.
 

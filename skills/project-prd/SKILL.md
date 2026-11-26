@@ -29,7 +29,7 @@ Synthesis, not an interview. Every fact in `docs/prd.md` comes from the `project
 
 - `glossary.md` exists. If absent, stop and tell the PM to run `project-setup`.
 - The `project-grilling` recap is in this conversation, with its confirmation by the PM. If it is absent or cut off, stop, write nothing, and tell the PM to run `project-grilling` again. Glossary entries and ADRs from the earlier session stay and shorten the re-run.
-- Read `glossary.md` and every ADR in `docs/adr/` with `Cakupan: product`.
+- Read `glossary.md` and every ADR in `docs/adr/` with `Cakupan: product` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR).
 - `docs/prd.md` exists: this is an update. Read it.
 
 Done when the recap is located and the mode (new or update) is known.

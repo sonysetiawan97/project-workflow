@@ -31,7 +31,7 @@ Business rule IDs are global: the next `BR-NNN` is the highest in the file plus 
 
 - `glossary.md` exists. If absent, stop and tell the user to run `project-setup`.
 - `docs/prd.md` exists with `Status: approved`. If absent or `draft`, stop and tell the user to finish `project-prd`.
-- Read `glossary.md`, every ADR in `docs/adr/`, `docs/prd.md`, and `docs/fsd.md` if it exists.
+- Read `glossary.md`, every ADR in `docs/adr/` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR), `docs/prd.md`, and `docs/fsd.md` if it exists.
 - Compare the PRD's `Fitur` table with the FSD's `### F-NN` sections. The features with no section are the **queue**: must first, then should, then could, PRD order within each priority. An FSD section whose feature left the PRD is removed, with a `Riwayat Perubahan` line.
 
 Done when the queue is known, or the queue is empty and the PM/BA has named what to change.

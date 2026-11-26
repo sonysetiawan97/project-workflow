@@ -41,7 +41,7 @@ Versioning follows `contract/README.md`: a new file starts at `0.1.0`; a non-bre
 - `glossary.md` exists. If absent, stop and tell the user to run `project-setup`.
 - `docs/fsd.md` exists with `Status: approved`. If absent or `draft`, stop and tell the user to finish `project-fsd`.
 - All four files in `architecture/` exist. If any is absent, stop and tell the user to run `project-architecture`.
-- Read `glossary.md`, every ADR in `docs/adr/`, `docs/fsd.md`, every file in `architecture/`, and everything in `contract/`.
+- Read `glossary.md`, every ADR in `docs/adr/` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR), `docs/fsd.md`, every file in `architecture/`, and everything in `contract/`.
 - `apps/` holds code: read its routes and request/response types. Existing routes are the default answer; changing one is a contract change under the versioning rules.
 - List the services: every app in `architecture/overview.md` that serves HTTP to another app or to a client.
 
