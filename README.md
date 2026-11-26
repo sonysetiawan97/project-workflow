@@ -46,37 +46,23 @@ skills/              skill khusus project
 
 ## Prasyarat
 
-- macOS atau Linux, karena project dan install memakai symlink.
+- macOS atau Linux, karena project memakai symlink `.claude/skills` dan `.agents/skills`.
+- Node.js, untuk `npx`.
 - Agent yang membaca skill dari `~/.claude/skills/` (Claude Code) atau `~/.agents/skills/`.
 - Parser YAML, misalnya Python 3 dengan PyYAML, untuk pengecekan di `project-contract`.
 
 ## Install
 
-Dari root repo ini:
+Pasang keenam skill di level user lewat [`skills`](https://www.npmjs.com/package/skills):
 
 ```sh
-mkdir -p ~/.claude/skills ~/.agents/skills
-for s in skills/*/; do
-  [ -f "$s/SKILL.md" ] || continue
-  ln -s "$PWD/${s%/}" ~/.claude/skills/
-  ln -s "$PWD/${s%/}" ~/.agents/skills/
-done
+npx skills add sonysetiawan97/project-workflow -g --skill '*'
 ```
 
-Karena berupa symlink, `git pull` di repo ini langsung memperbarui skill yang ter-install.
+CLI menanyakan agent yang dipasangi; tambahkan `-a claude-code` untuk langsung memilih Claude Code.
 
-## Uninstall
-
-Dari root repo ini. Hanya symlink yang dihapus:
-
-```sh
-for s in skills/*/; do
-  n=$(basename "$s")
-  for d in ~/.claude/skills ~/.agents/skills; do
-    [ -L "$d/$n" ] && rm "$d/$n"
-  done
-done
-```
+- Update ke versi terbaru: `npx skills update -g`.
+- Uninstall: `npx skills remove -g --skill project-setup project-grilling project-prd project-fsd project-architecture project-contract`.
 
 ## Cara Pakai
 
