@@ -15,6 +15,6 @@ Sumber kebenaran antarmuka antar-app. Kode di `apps/` mengikuti file di sini.
 
 ## Daftar Service
 
-| Service | File | Versi | Konsumen |
-|---|---|---|---|
-| {{service}} | {{http/<service>.openapi.yaml}} | {{versi}} | {{app yang memakai}} |
+| Service | File | Versi | Konsumen | Tanggal |
+|---|---|---|---|---|
+| {{service}} | {{http/<service>.openapi.yaml}} | {{versi}} | {{app yang memakai}} | {{tanggal konfirmasi terakhir, YYYY-MM-DD}} |

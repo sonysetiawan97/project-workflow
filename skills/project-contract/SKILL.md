@@ -44,19 +44,20 @@ Versioning follows `contract/README.md`: a new file starts at `0.1.0`; a non-bre
 - No ADR change is pending. An ADR whose `Konsekuensi` has a `FSD perlu diubah:` line that no `Riwayat Perubahan` line in `docs/fsd.md` names, or an `architecture/ perlu diubah:` line whose named files do not all cite the ADR: stop, and tell the user to run `project-fsd` or `project-architecture` first.
 - Read `glossary.md`, every ADR in `docs/adr/` (the `NNNN-<slug>.md` files; `README.md` holds the template, not an ADR), `docs/fsd.md`, every file in `architecture/`, and everything in `contract/`.
 - `apps/` holds code: read its routes and request/response types. Existing routes are the default answer; changing one is a contract change under the versioning rules.
+- For each confirmed service, list the upstream changes since its row's `Tanggal` in `contract/README.md`: `Riwayat Perubahan` lines in `docs/prd.md` and `docs/fsd.md` dated on or after it, and `architecture/` files whose `Tanggal` is on or after it.
 - List the services: every app in `architecture/overview.md` that exposes an HTTP API. A frontend that only serves pages to the browser is a consumer, not a service.
 
-Done when every service is marked absent, confirmed (its file has a row in `contract/README.md`), or draft (its file has no row yet: left by a run that stopped before the tech lead confirmed it).
+Done when every service is marked absent, confirmed (its file has a row in `contract/README.md`), or draft (its file has no row yet: left by a run that stopped before the tech lead confirmed it), and each confirmed service's upstream changes are known.
 
 ### 2. Propose each service
 
 For each service, in `overview.md` order:
 
-1. Confirmed: ask the tech lead whether it has been reviewed and is correct. Yes means the file is done; otherwise take the change, classify it as breaking or non-breaking, and go to step 5.
+1. Confirmed: show its upstream changes and propose the contract changes they need, if any. Then ask the tech lead whether it has been reviewed and is correct. Yes means the file is done and its row's `Tanggal` becomes today; otherwise take the change, classify it as breaking or non-breaking, and go to step 5.
 2. Draft: go to step 3 with the draft as the proposal.
 3. Absent: derive the paths, operations and schemas from the FSD features this service serves: flows give operations, `Field dan Validasi` gives schemas and error responses, `State dan Transisi` gives status enums. Ask the tech lead only what cannot be derived, one question at a time, recommended answer first, with the reason.
 4. Write the file, check it, then ask the tech lead to review it and say whether it is correct.
-5. Apply corrections, bump `info.version` as the versioning rules require, check again, and ask again, until the tech lead confirms. Then add or update the service's row in `contract/README.md` (writing the file from its template if absent); the row marks the file as confirmed.
+5. Apply corrections, bump `info.version` as the versioning rules require, check again, and ask again, until the tech lead confirms. Then add or update the service's row in `contract/README.md` (writing the file from its template if absent) with today as `Tanggal`; the row marks the file as confirmed.
 
 The check: the file parses as YAML, `openapi` is `3.1.0`, no `{{` remains, and every local `$ref` resolves. One command covers the parse and the `$ref`s:
 
@@ -70,6 +71,6 @@ Done per file when the check passes and the tech lead confirms it. Done for the 
 
 ### 3. Index
 
-`contract/README.md` holds one `Daftar Service` row per confirmed service, written in step 2: its file, `info.version`, and the apps that consume it (from `architecture/overview.md`). Check the rows against the files, then ask the tech lead to confirm the index.
+`contract/README.md` holds one `Daftar Service` row per confirmed service, written in step 2: its file, `info.version`, the apps that consume it (from `architecture/overview.md`), and the date it was last confirmed. Check the rows against the files, then ask the tech lead to confirm the index.
 
 Done when every file in `contract/http/` has a row and the tech lead confirms. Report the ADRs written this session. The foundation is complete; the next stage is per-feature tickets in `docs/tracker/`.
