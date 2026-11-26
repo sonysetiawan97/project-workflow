@@ -1,0 +1,6 @@
+# Setiap app di apps/ punya repo sendiri.
+apps/*
+!apps/.gitkeep
+
+.DS_Store
+.claude/settings.local.json

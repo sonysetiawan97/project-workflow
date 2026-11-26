@@ -28,8 +28,9 @@ docs/
   fsd.md
   adr/               README.md (template ADR), 0001-<slug>.md, ...
   tracker/           README.md (template tiket), <divisi>/<fitur>/<NN>-<slug>.md
-apps/<app>/
+apps/<app>/          repo terpisah, diabaikan .gitignore
 skills/              skill khusus project
+.gitignore
 .claude/skills  ->  ../skills
 .agents/skills  ->  ../skills
 ```

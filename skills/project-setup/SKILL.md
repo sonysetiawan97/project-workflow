@@ -1,6 +1,6 @@
 ---
 name: project-setup
-description: Scaffold a new project's skeleton (folders, AGENTS.md, CLAUDE.md, glossary.md, the ADR and tracker templates, the skills symlinks). Run once per project, before project-grilling.
+description: Scaffold a new project's skeleton (folders, AGENTS.md, CLAUDE.md, glossary.md, .gitignore, the ADR and tracker templates, the skills symlinks). Run once per project, before project-grilling.
 disable-model-invocation: true
 ---
 
@@ -27,6 +27,7 @@ Scaffold the skeleton every other `project-*` skill assumes, by copying the temp
 | `architecture/.gitkeep` | empty |
 | `contract/.gitkeep` | empty |
 | `apps/.gitkeep` | empty |
+| `.gitignore` | `templates/.gitignore` |
 | `.claude/skills` | symlink to `../skills` |
 | `.agents/skills` | symlink to `../skills` |
 
@@ -64,11 +65,13 @@ Record the state of each chosen division's `docs/tracker/<division>/.gitkeep`. S
 - Keep every other `{{...}}`. Those are authoring placeholders inside the shared templates, filled later by the skill that writes each artifact.
 - Symlinks: `mkdir -p .claude .agents`, then `ln -s ../skills .claude/skills` and `ln -s ../skills .agents/skills`.
 - Existing `AGENTS.md` or `CLAUDE.md`: list the template sections it lacks and ask whether to add them.
+- Existing `.gitignore`: list the template lines it lacks and ask whether to append them. `apps/*` and `!apps/.gitkeep` matter most: each app under `apps/` has its own repo.
 - A conflict (a real `skills` directory under `.claude/` or `.agents/`, or a symlink pointing elsewhere): leave it, report it, ask the user how to resolve it.
 
 ### 5. Verify
 
 - `readlink .claude/skills .agents/skills` both print `../skills`.
 - `grep -rnE '\{\{[A-Z_]+\}\}' AGENTS.md glossary.md docs/` prints nothing.
+- `grep -xF 'apps/*' .gitignore` and `grep -xF '!apps/.gitkeep' .gitignore` each print one line.
 
-Done when both checks pass. Report what was created, kept and skipped, and name the next step: `project-grilling`.
+Done when all three checks pass. Report what was created, kept and skipped, and name the next step: `project-grilling`.
