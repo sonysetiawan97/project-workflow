@@ -6,7 +6,7 @@
 
 | Path | Isi | Ditulis oleh |
 |---|---|---|
-| `glossary.md` | bahasa domain project | `project-grilling` |
+| `glossary.md` | bahasa domain project; template di header file | skill yang sedang berjalan |
 | `docs/prd.md` | PRD | `project-prd` |
 | `docs/fsd.md` | FSD | `project-fsd` |
 | `docs/adr/` | catatan keputusan; template di `docs/adr/README.md` | skill yang sedang memutuskan |

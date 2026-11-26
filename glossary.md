@@ -24,7 +24,7 @@ Template yang dipakai lebih dari satu skill (ADR, glossary, Tiket) dan disalin k
 _Hindari_: Template global
 
 **Skill Pemilik**:
-Satu-satunya skill yang boleh menulis sebuah Artefak.
+Satu-satunya skill yang boleh menulis sebuah Artefak; glossary dan ADR tidak punya Skill Pemilik dan ditulis oleh skill yang sedang berjalan.
 _Hindari_: Writer, owner
 
 **Divisi**:
