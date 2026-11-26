@@ -11,7 +11,7 @@ Kumpulan skill untuk membangun project dari nol: skeleton, grilling PM, PRD, FSD
 | 3 | `project-prd` | PM | `docs/prd.md` | tersedia |
 | 4 | `project-fsd` | PM/BA | `docs/fsd.md` | tersedia |
 | 5 | `project-architecture` | tech lead | `architecture/`, ADR teknis | tersedia |
-| 6 | `project-contract` | tech lead | `contract/` | template saja |
+| 6 | `project-contract` | tech lead | `contract/` | tersedia |
 
 Setelah keenamnya, per fitur: tiket per divisi di `docs/tracker/<divisi>/<fitur>/`. Skill tahap ini belum dibuat.
 
