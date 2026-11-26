@@ -1,6 +1,6 @@
 # Bahasa dan penamaan file
 
-- **Tanggal:** 2026-11-26
+- **Tanggal:** 2026-11-27
 - **Sumber:** percakapan 2026-11-26
 - **Status:** accepted
 - **Cakupan:** architecture
@@ -8,12 +8,12 @@
 
 ## Keputusan
 
-`SKILL.md` ditulis dalam bahasa Inggris. Template, dokumen project, dan sesi grilling memakai bahasa Indonesia. Nama file dan folder huruf kecil kebab-case, kecuali `AGENTS.md`, `CLAUDE.md`, `SKILL.md`, dan `README.md`.
+`SKILL.md` ditulis dalam bahasa Inggris. Template, dokumen project, dan sesi grilling memakai bahasa Indonesia. Nama file dan folder huruf kecil kebab-case, kecuali `AGENTS.md`, `CLAUDE.md`, `SKILL.md`, `README.md`, dan `LICENSE`.
 
 ## Opsi yang Dipertimbangkan
 
 - **`SKILL.md` dalam bahasa Indonesia**: ditolak; instruksi berbahasa Inggris diikuti model lebih presisi.
-- **Semua nama file huruf kecil tanpa pengecualian**: ditolak; tool mencari keempat nama itu persis, dan di Linux `claude.md` tidak terbaca.
+- **Semua nama file huruf kecil tanpa pengecualian**: ditolak; tool mencari kelima nama itu persis, dan di Linux `claude.md` tidak terbaca.
 
 ## Konsekuensi
 

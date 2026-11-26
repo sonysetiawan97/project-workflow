@@ -37,7 +37,7 @@ skills/              skill khusus project
 ## Aturan Repo Ini
 
 - `SKILL.md` ditulis dalam bahasa Inggris. Template, dokumen yang dihasilkan, dan sesi grilling memakai bahasa Indonesia.
-- Nama file dan folder huruf kecil kebab-case, kecuali `AGENTS.md`, `CLAUDE.md`, `SKILL.md`, `README.md`.
+- Nama file dan folder huruf kecil kebab-case, kecuali `AGENTS.md`, `CLAUDE.md`, `SKILL.md`, `README.md`, `LICENSE`.
 - Satu artefak, satu template, satu skill pemilik.
 - Template milik satu skill ada di `skills/<skill>/templates/`, dengan path yang mencerminkan path di project.
 - Template bersama (ADR, glossary, tiket) ada di `skills/project-setup/templates/`. `project-setup` menyalinnya ke project, lalu semua skill membacanya dari project.
@@ -55,3 +55,7 @@ for s in skills/*/; do
   ln -s "$PWD/${s%/}" ~/.agents/skills/
 done
 ```
+
+## Lisensi
+
+[MIT](LICENSE).

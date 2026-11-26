@@ -11,7 +11,7 @@ Scaffold the skeleton every other `project-*` skill assumes, by copying the temp
 ## Language and naming
 
 - Talk to the user in Indonesian. Every file written into the project is in Indonesian.
-- File and folder names are lowercase kebab-case, except `AGENTS.md`, `CLAUDE.md`, `SKILL.md`, `README.md`.
+- File and folder names are lowercase kebab-case, except `AGENTS.md`, `CLAUDE.md`, `SKILL.md`, `README.md`, `LICENSE`.
 
 ## Skeleton
 

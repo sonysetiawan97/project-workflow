@@ -18,7 +18,7 @@
 
 ## Aturan
 
-- Nama file dan folder huruf kecil kebab-case, kecuali `AGENTS.md`, `CLAUDE.md`, `SKILL.md`, `README.md`.
+- Nama file dan folder huruf kecil kebab-case, kecuali `AGENTS.md`, `CLAUDE.md`, `SKILL.md`, `README.md`, `LICENSE`.
 - Dokumen ditulis dalam bahasa Indonesia.
 - Setiap dokumen mengikuti templatenya persis: heading dan field sama, urutan sama.
 - Pakai istilah dari `glossary.md`.
