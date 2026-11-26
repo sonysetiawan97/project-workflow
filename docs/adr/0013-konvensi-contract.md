@@ -8,7 +8,7 @@
 
 ## Keputusan
 
-Field dan parameter di contract memakai snake_case, sama dengan kolom di `architecture/data-model.md`. Path memakai kebab-case dan nama schema PascalCase, semuanya dari istilah `glossary.md`. Setiap operation diberi tag `F-NN` dan menyebut BR yang ditegakkan di `description`. Contract cukup divalidasi dengan parse YAML dan cek `openapi: 3.1.0`.
+Field dan parameter di contract memakai snake_case, sama dengan kolom di `architecture/data-model.md`. Path memakai kebab-case dan nama schema PascalCase, semuanya dari istilah `glossary.md`. Setiap operation diberi tag `F-NN` dan menyebut BR yang ditegakkan di `description`. Contract divalidasi dengan parse YAML, cek `openapi: 3.1.0`, dan cek bahwa setiap `$ref` lokal tersambung, semuanya dengan Python tanpa tool tambahan.
 
 ## Opsi yang Dipertimbangkan
 
@@ -18,4 +18,4 @@ Field dan parameter di contract memakai snake_case, sama dengan kolom di `archit
 
 ## Konsekuensi
 
-- Kesalahan struktur OpenAPI yang tetap YAML valid (misalnya `$ref` putus) tidak tertangkap oleh pengecekan skill.
+- Kesalahan skema OpenAPI lain yang tetap YAML valid dengan `$ref` tersambung (misalnya tipe yang salah tulis) tidak tertangkap oleh pengecekan skill.

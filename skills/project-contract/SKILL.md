@@ -58,7 +58,11 @@ For each service, in `overview.md` order:
 4. Write the file, check it, then ask the tech lead to review it and say whether it is correct.
 5. Apply corrections, bump `info.version` as the versioning rules require, check again, and ask again, until the tech lead confirms. Then add or update the service's row in `contract/README.md` (writing the file from its template if absent); the row marks the file as confirmed.
 
-The check: the file parses as YAML (`python3 -c 'import sys, yaml; yaml.safe_load(open(sys.argv[1]))' <file>`, or any other YAML parser), `openapi` is `3.1.0`, and no `{{` remains.
+The check: the file parses as YAML, `openapi` is `3.1.0`, no `{{` remains, and every local `$ref` resolves. One command covers the parse and the `$ref`s:
+
+```sh
+python3 -c 'import sys,re,yaml; t=open(sys.argv[1]).read(); d=yaml.safe_load(t); bad=["/".join(r) for r in re.findall(r"#/components/(\w+)/([\w.-]+)", t) if r[1] not in (d.get("components") or {}).get(r[0], {})]; print("ref putus:", bad or "tidak ada"); sys.exit(bool(bad))' <file>
+```
 
 The contract needs a change to `architecture/`, the FSD or the PRD (a missing entity, an unbuildable rule): stop. Keep the confirmed files and the current draft, and name the draft in the stop message. Tell the user which skills to run, in order: a change that also adds behaviour for an actor (a setting, a screen, a flow) goes to `project-fsd` first, then `project-architecture`; a purely technical gap goes to `project-architecture` alone. Then run `project-contract` again to resume. A domain term that settles goes into `glossary.md`, following the template in its header comment. The definition says what the term is, not what it does.
 
