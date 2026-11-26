@@ -8,7 +8,7 @@ Kumpulan skill untuk membangun project dari nol: skeleton, grilling PM, PRD, FSD
 |---|---|---|---|---|
 | 1 | `project-setup` | siapa pun | skeleton project | tersedia |
 | 2 | `project-grilling` | PM | `glossary.md`, ADR produk | tersedia |
-| 3 | `project-prd` | PM | `docs/prd.md` | template saja |
+| 3 | `project-prd` | PM | `docs/prd.md` | tersedia |
 | 4 | `project-fsd` | PM/BA | `docs/fsd.md` | template saja |
 | 5 | `project-architecture` | tech lead | `architecture/`, ADR teknis | template saja |
 | 6 | `project-contract` | tech lead | `contract/` | template saja |
