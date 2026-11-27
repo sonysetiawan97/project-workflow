@@ -1,6 +1,6 @@
 ---
 name: project-setup
-description: Scaffold a new project's skeleton (folders, AGENTS.md, CLAUDE.md, glossary.md, .gitignore, the ADR and tracker templates, the skills symlinks). Run once per project, before project-grilling.
+description: Scaffold a new project's skeleton (folders, AGENTS.md, CLAUDE.md, glossary.md, .gitignore, the ADR and tracker templates, the skills symlinks) and run git init. Run once per project, before project-grilling.
 disable-model-invocation: true
 ---
 
@@ -39,7 +39,7 @@ The three shared templates (`glossary.md`, `docs/adr/README.md`, `docs/tracker/R
 
 ### 1. Explore
 
-The target is the current working directory unless the user names another. For every path in the skeleton except the division `.gitkeep` files, record one state: absent, present, or (for the symlinks) a real directory or a symlink to another target. Divisions are chosen in step 2, so list the folders already under `docs/tracker/` instead. Also note whether the target is a git repo; report it, change nothing.
+The target is the current working directory unless the user names another. For every path in the skeleton except the division `.gitkeep` files, record one state: absent, present, or (for the symlinks) a real directory or a symlink to another target. Divisions are chosen in step 2, so list the folders already under `docs/tracker/` instead. Also record the git state with `git rev-parse --show-toplevel`: no repo, the target is the repo root, or the target sits inside a parent repo.
 
 Done when every skeleton path except the division `.gitkeep` files has a state, and the existing `docs/tracker/` folders are listed.
 
@@ -53,11 +53,12 @@ In Indonesian, one question at a time:
 
 ### 3. Confirm
 
-Record the state of each chosen division's `docs/tracker/<division>/.gitkeep`. Show the user three lists: paths to create, paths already present (kept as they are), and conflicts. Wait for an explicit yes.
+Record the state of each chosen division's `docs/tracker/<division>/.gitkeep`. Show the user three lists: paths to create, paths already present (kept as they are), and conflicts. State the git action: `git init` (no repo), none (already the repo root), or a question whether to `git init` a nested repo (inside a parent repo). Wait for an explicit yes.
 
 ### 4. Write
 
 - Write only to absent paths. Existing files stay byte-for-byte as they are.
+- Git: run `git init` in the target if it has no repo, or if the user agreed to a nested one. Leave staging and the first commit to the user.
 - Copy each template, then replace the setup tokens:
   - `{{PROJECT_NAME}}`: the project name.
   - `{{PROJECT_DESCRIPTION}}`: the description.
@@ -73,5 +74,6 @@ Record the state of each chosen division's `docs/tracker/<division>/.gitkeep`. S
 - `readlink .claude/skills .agents/skills` both print `../skills`.
 - `grep -rnE '\{\{[A-Z_]+\}\}' AGENTS.md glossary.md docs/` prints nothing.
 - `grep -xF 'apps/*' .gitignore` and `grep -xF '!apps/.gitkeep' .gitignore` each print one line.
+- If `git init` ran or the target was already the repo root, `git rev-parse --show-toplevel` prints the target.
 
-Done when all three checks pass. Report what was created, kept and skipped, and name the next step: `project-grilling`.
+Done when every check passes. Report what was created, kept and skipped, and name the next step: `project-grilling`.
